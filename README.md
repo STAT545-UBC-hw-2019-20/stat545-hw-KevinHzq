@@ -17,6 +17,6 @@ I’m a master student at the Department of Geography at UBC. My researchs
 focus on Geographical Information System (GIS) applications in health
 Geography. :rocket:
 
-    *Tobler's first law of geography*
-    >Everything is related to everything else, 
-    >but near things are more related than distant things.
+*Tobler's first law of geography:*
+>Everything is related to everything else, 
+>but near things are more related than distant things.
