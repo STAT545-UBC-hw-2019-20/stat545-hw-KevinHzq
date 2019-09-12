@@ -1,0 +1,32 @@
+---
+title: "Assignment 1 - Exercise 2"
+author: "Kevin Hu"
+date: "11/09/2019"
+output: github_document
+---
+
+<!--above is YAML header-->
+
+## Load required packages
+```{r load,warning=FALSE,echo=TRUE}
+library(datasets)
+```
+## Time Series of Annual Flow of the River Nile from 1871 to 1971
+
+```{r}
+plot(Nile)
+```
+
+## Descriptive Statistics of the Flow Data:
+```{r}
+stat <- summary(Nile)
+stat
+```
+
+## Years below Average
+```{r}
+belowmean <- Nile[Nile<stat[4]]
+print(paste("There are",length(belowmean),"years that Nile River's annual flow was below the mean.",sep = " "))
+```
+
+<!--This is a comment-->
