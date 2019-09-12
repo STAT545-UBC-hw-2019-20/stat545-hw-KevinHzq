@@ -11,8 +11,12 @@ Analysis](https://stat545.stat.ubc.ca/#about) at University of British
 Columbia. The files in this repository are assignments completed by
 [Kevin Hu](https://github.com/KevinHzq) in Fall, 2019.
 
-Quick links to assignments
-*[Assignment1](https://github.com/STAT545-UBC-hw-2019-20/stat545-hw-KevinHzq/Assignment1)
+Quick links to assignments:
+*[Assignment1](https://github.com/STAT545-UBC-hw-2019-20/stat545-hw-KevinHzq/tree/master/Assignment1)
+*Assignment2
+*Assignment3
+*Assignment4
+*Assignment5
 
 ## About the Author
 
