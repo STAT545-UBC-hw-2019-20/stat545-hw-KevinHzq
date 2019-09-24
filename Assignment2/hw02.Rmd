@@ -3,7 +3,7 @@ title: "Assignment 2"
 author: "Kevin Hu"
 date: "19/09/2019"
 output: github_document
-#always_allow_html: yes
+always_allow_html: yes
 ---
 
 ## Exercise 1: Basic dplyr
@@ -41,7 +41,7 @@ gapminder %>%
   ungroup() %>%
   filter(diff_lifeExp < 0) %>% 
   select(country, year, lifeExp, diff_lifeExp) %>% 
-  knitr::kable(format = "rst") 
+  DT::datatable()
 ```
 
 ### 1.4 Filter gapminder so that it shows the max GDP per capita experienced by each country.
@@ -51,7 +51,7 @@ gapminder %>%
   arrange(desc(gdpPercap)) %>% 
   filter(gdpPercap == first(gdpPercap)) %>% 
   arrange(country) %>% 
-  knitr::kable(format = "rst")
+  DT::datatable()
   
 ```
 
