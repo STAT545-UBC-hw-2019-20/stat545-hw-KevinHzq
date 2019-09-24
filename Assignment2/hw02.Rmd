@@ -3,6 +3,7 @@ title: "Assignment 2"
 author: "Kevin Hu"
 date: "19/09/2019"
 output: github_document
+always_allow_html: yes
 ---
 
 ## Exercise 1: Basic dplyr
