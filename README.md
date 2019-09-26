@@ -13,10 +13,10 @@ Columbia. The files in this repository are assignments completed by
 
 Quick links to assignments:
 * [Assignment1](https://github.com/STAT545-UBC-hw-2019-20/stat545-hw-KevinHzq/tree/master/Assignment1)
-* Assignment2
-* Assignment3
-* Assignment4
-* Assignment5
+* [Assignment2](https://github.com/STAT545-UBC-hw-2019-20/stat545-hw-KevinHzq/tree/master/Assignment2)
+* [Assignment3](https://github.com/STAT545-UBC-hw-2019-20/stat545-hw-KevinHzq/tree/master/Assignment3)
+* [Assignment4](https://github.com/STAT545-UBC-hw-2019-20/stat545-hw-KevinHzq/tree/master/Assignment4)
+* [Assignment5](https://github.com/STAT545-UBC-hw-2019-20/stat545-hw-KevinHzq/tree/master/Assignment5)
 
 ## About the Author
 
