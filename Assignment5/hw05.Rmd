@@ -1,0 +1,99 @@
+---
+title: "Assignment 5"
+author: "Kevin Hu"
+date: "10/10/2019"
+output: html_document
+---
+Load the required libraries
+```{r message=FALSE, warning=FALSE}
+library(gapminder)
+library(tidyverse)
+library(forcats)
+```
+
+## Exercise 1: Explain the value of the here::here package
+
+  Using the here::here package will increase the reproducibility of your codes. The user can run your code without changing the absolute path of the root/project directory regardless what operation system the user is using. This is achieved by auto-detecting the root directory, then joining it (in a format that matches the user's platform) with sub-directories and file name that you specify when the here function is called.
+  
+## Exercise 2: Factor management
+
+### Task 1 Drop Oceania in the gapminder dataset
+The number of rows in the original data:
+```{r}
+nrow(gapminder)
+```
+
+The number of levels of _continent_ in the original data:
+```{r}
+levels(gapminder$continent)
+nlevels(gapminder$continent)
+```
+
+Drop __Oceania__: Filter the Gapminder data to remove observations associated with the continent of Oceania
+```{r}
+DT::datatable(gap <- gapminder %>% 
+  filter(continent != "Oceania") %>% 
+  droplevels())
+  
+```
+
+The number of rows after dropping:
+```{r}
+nrow(gap)
+```
+
+The number of levels of _continent_ after dropping:
+```{r}
+levels(gap$continent)
+nlevels(gap$continent)
+```
+
+### Task 2 Reorder the levels of continent
+Orignal order:
+```{r}
+levels(gap$continent)
+```
+
+Figure showing the orignal order:
+```{r}
+ggplot(gap, aes(continent, gdpPercap)) +
+  geom_jitter() +
+  labs(x = "Continent", y = "GDP per capita")
+```
+
+Reorder based on the standard deviation of GDP per capita:
+```{r}
+gap %>%
+  ggplot() +
+  geom_jitter(aes(fct_reorder(continent, gdpPercap, sd), gdpPercap)) +
+  labs(x = "Continent", y = "GDP per capita")
+```
+
+## Exercise 3: File input/output (I/O)
+
+### Summarize GDP per capita by continent
+```{r}
+gap_stat <- gapminder %>% 
+  group_by(continent) %>% 
+  summarise(mean_gdp = mean(gdpPercap),
+            sd_gdp = sd(gdpPercap))
+knitr::kable(gap_stat)
+```
+
+### Write the summary table as a csv file
+```{r}
+write_csv(gap_stat, here::here("gap_gdp_by_continent.csv"))
+```
+
+### Read the file and reorder the levels of continent based on the standard deviation of GDP per capita
+```{r}
+gap_import <- read_csv(here::here("gap_gdp_by_continent.csv"))
+gap_import %>%
+  ggplot() +
+  geom_point(aes(fct_reorder(continent, sd_gdp), mean_gdp)) +
+  labs(x = "Continent", y = "Average GDP per capita")
+```
+
+If you see the graph above, the newly created file survived the round trip of writing to file then reading back in.
+
+
